@@ -2,7 +2,8 @@
 
 Your simple solution to staying weather-aware throughout your business week!
 
-<img src="/showcase/demo.gif"/>
+<img src="/demo.gif"/>
+<img src="demo.gif"/>
 
 
 ## Installations
