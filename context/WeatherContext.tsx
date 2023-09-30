@@ -74,7 +74,6 @@ const WeatherContextProvider: React.FC<{ children: React.ReactNode }> = ({
       const weatherDataURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`;
       const response = await fetch(weatherDataURL);
       const data = await response.json();
-      console.log(data);
       checkForError(data);
       let parsedFiveDaysData = parseFiveDaysData(data);
       setCurrentWeatherData(parsedFiveDaysData);
