@@ -1,0 +1,7 @@
+export const Colors = {
+  BACKGROUND: '#1C2C3F',
+  NAV_BACKGROUND: '#2B3B52',
+  NAV_BORDER: '#3A4A5B',
+  ICON: '#5B7A91',
+  ICON_FOCUSED: '#89AEC1',
+};
