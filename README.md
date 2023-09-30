@@ -2,10 +2,8 @@
 
 Your simple solution to staying weather-aware throughout your business week!
 
-<img src="/demo.gif"/>
+![](https://github.com/AdamLuck98/WeatherApp/blob/main/demo.gif)
 <img src="demo.gif"/>
-
-
 ## Installations
 
 Run following commands
