@@ -74,6 +74,7 @@ const WeatherContextProvider: React.FC<{ children: React.ReactNode }> = ({
       const weatherDataURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`;
       const response = await fetch(weatherDataURL);
       const data = await response.json();
+      console.log(data);
       checkForError(data);
       let parsedFiveDaysData = parseFiveDaysData(data);
       setCurrentWeatherData(parsedFiveDaysData);
@@ -87,17 +88,19 @@ const WeatherContextProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const checkForError = (data: any) => {
-    data.cod !== '200' && setHasFetchError(true);
+    if (data.cod > 400) {
+      setHasFetchError(true);
+      Toast.show(data.message, {
+        duration: Toast.durations.LONG,
+        position: Toast.positions.BOTTOM,
+        shadow: true,
+        animation: true,
+        hideOnPress: true,
+        delay: 0,
+      });
+      throw new Error(data);
+    }
     //Show Alert message
-    Toast.show(data.message, {
-      duration: Toast.durations.LONG,
-      position: Toast.positions.BOTTOM,
-      shadow: true,
-      animation: true,
-      hideOnPress: true,
-      delay: 0,
-    });
-    throw new Error(data.message);
   };
 
   const contextValue = React.useMemo(

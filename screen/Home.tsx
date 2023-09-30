@@ -21,7 +21,6 @@ const { height, width } = Dimensions.get('window');
 
 export default function Home() {
   const weather = useWeather();
-  console.log(weather?.loading);
   return (
     <View style={styles.container}>
       <StatusBar style='inverted' />
